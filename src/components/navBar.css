@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.theme-dark {
+  background-color: #f5f7fa;
+  color: #000;
+}
+
+.theme-light {
+  background-color: #000;
+  color: #f5f7fa;
+}
+
+.navbar-dark {
+  background-color: #fff;
+  color: #555f7d;
+}
+
+.navbar-light {
+  background-color: #333;
+  color: #fff;
+}
+
+
+/* .navbar-light .toggle-button {
+  color: #0d99ff;
+}
+
+.navbar-dark .toggle-button {
+  color: #fff;
+} */
+
+
+.active {
+  background-color: #0d99ff;
+}
+
+.toggle-icon {
+  color: #0d99ff;
+}
+
+.toggle-icon.active {
+  color: #fff;
+}
+
+.theme-dark .toggle-icon {
+  color: #999;
+}
+
+.theme-light .toggle-icon {
+    color: #999;
+}
+
+
+
+.logo {
+  height: 40px;
+  width: 40px;
+  margin-right: 16px;
+}
+
+.mainSide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#NavBar {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+}
+
+.titleMain {
+  margin-top: 22px;
+  font-size: 160%;
+  margin-left: 10px;
+}
+
+.check {
+  margin-top: 11px;
+  margin-left: 90px;
+  font-size: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 35px;
+  margin-right: 65px;
+  margin-bottom: 15px;
+}
+
+.switch.light .slider {
+  background-color: #555;
+}
+
+.switch.dark .slider {
+  background-color: #ccc;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.toggle-icon {
+  color: #2196f3;
+  margin-top: 22px;
+  font-size: 130%;
+}
+.toggle-icon.active {
+  color: #fff;
+  width: 100%;
+  border-radius: 6px;
+}
+.slider.round {
+  border-radius: 6px;
+  width: 160px;
+  height: 50px;
+  
+}
+.parent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+#iconSun {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#iconMoon {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconElement{
+    font-size:25px;
+    width: 35%;
+    margin-top: 33px;
+}
+
+.toggleText {
+    font-size: 70%;
+    font-weight: 700;
+    margin-left: 3px;
+    margin-top: 13px;
+  }
+
+
+
+  
