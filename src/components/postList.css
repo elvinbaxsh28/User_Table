@@ -7,6 +7,7 @@
   .checkbox-wrapper-28 {
     --size: 25px;
     position: relative;
+  
   }
   
   .checkbox-wrapper-28 *,
@@ -44,10 +45,10 @@
     content: "";
     height: var(--size);
     width: var(--size);
-    margin-right: 8px;
-    float: left;
+    margin-left: 9px;
+    float: right;
     border: 2px solid #0080d3;
-    border-radius: 3px;
+    border-radius: 6px;
     transition: 0.15s all ease-out;
   }
   .checkbox-wrapper-28 svg {
@@ -56,7 +57,7 @@
     height: 0;
     width: calc(var(--size) * 0.6);
     position: absolute;
-    left: calc(var(--size) * 0.21);
+    right:  calc(var(--size) * 0.21);
     top: calc(var(--size) * 0.2);
     stroke-dasharray: 33;
   }
@@ -86,6 +87,7 @@
     width: 100%;
     position: relative;
     overflow: hidden;
+    border-radius: 6px;
   }
   .table {
     border-collapse: collapse;
@@ -114,60 +116,66 @@
   .table tr:last-child td {
     border-bottom: none;
   }
-
-
-  #table {
-    width: 55%;
-    border-collapse: collapse;
-    margin:20px;
-    height: 300px;
   
+  
+  #table {
+    width: 100%;
+    border-collapse: collapse;
+    /* height: 439px; */
   }
   
   
   /* Table Styles */
   .table th,
   .table td {
-    padding: 8px;
+    padding: 10px;
     text-align: center;
     border-bottom: 3px solid #ccc;
     border-left: 3px solid #ccc;
     background-color: #fff;
-    color: #000;
+    color: #555;
   }
   
   /* Dark Mode Styles */
   .table-dark th,
   .table-dark td {
-    background-color: #333;
-    color: #c0bfbf;
+    background-color: #222;
+    color: #fcf1f1;
     border-bottom: 3px solid #555;
     border-left: 3px solid #555;
   }
   
   
-
-  
-  
+  th {
+    font-size: 22px;
+  }
+  .fth{
+    width: 60px;
+  }
   
   /* input */
   .input {
-    background-color: #333;
+    background-color: #383838;
     border-radius: 6px;
-    height: 40px;
-    width: 200px;
+    height: 30px;
+    width: 250px;
     border: none;
     font-size: 20px;
+    color: #fff;
+    padding: 10px;
   }
-  
+  .input::placeholder{
+    color: #c3c3c3;
+  }
   .input-dark {
     background-color: #fff;
+    color: #333;
   }
   
   .btn {
     display:flex;
-    height: 43px;
-    width: 205px;
+    height: 50px;
+    width: 268px;
     border-radius: 6px;
     justify-content: center;
     align-items: center;
@@ -175,6 +183,207 @@
     background-color: #0e95ef;
     color: #fff;
     border: none;
-    margin-top: 10px;
+    margin-top: 15px;
+
   }
   
+  .btn:hover{
+    cursor: pointer;
+    background-color: #0185dd;
+    transition: .5s ease;
+  }
+  
+  #mainArea{
+    display: flex;
+    justify-content: start;
+    width: 100%;
+  }
+  
+  #leftSide{
+    width: 15%;
+    height: 81.2vh;
+    margin-right: 2%;
+    margin-left:1%;
+    margin-top: 1.7%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+  }
+  
+  #leftSide h2 {
+    margin-right: 133px;
+  }
+  
+  
+  #rightSide{
+    width: 67%;
+  }
+  .exampleTitle{
+    margin-bottom:10px;
+    margin-left:3px;
+  }
+  
+  #rightTop{
+    width:53%;
+    margin-bottom:14px;
+    font-weight: 500;
+  }
+  #checkBoxes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  #checkStyle{
+    padding: 8px;
+    border-radius: 5px;
+  }
+  
+  
+  #tableArea{
+    width: 100%;
+  }
+
+
+   @media (max-width: 767px) {
+    #mainArea {
+      flex-direction: column;
+    }
+    
+    #leftSide {
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+    }
+    
+    #rightSide {
+      width: 100%;
+    }
+    
+    #rightTop {
+      width: 100%;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    #leftSide {
+      width: 20%;
+    }
+    
+    #rightSide {
+      width: 70%;
+    }
+    
+    #rightTop {
+      width: 60%;
+    }
+  } 
+
+ /* @media (max-width: 767px) {
+    #mainArea {
+      flex-direction: column;
+    }
+    
+    #leftSide {
+      margin-right: 0;
+      margin-left: 0;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    
+    #rightSide {
+      width: 100%;
+    }
+    
+    #rightTop {
+      width: 100%;
+      font-size: 18px;
+    }
+    
+    .exampleTitle {
+      margin-left: 0;
+    }
+    
+    .table th,
+    .table td {
+      padding: 8px;
+      font-size: 14px;
+    }
+    
+    .input {
+      width: 100%;
+      max-width: 280px;
+    }
+    .checkbox-wrapper-28 label {
+        font-size: 16px;
+      }
+      .checkbox-wrapper-28 label {
+        font-size: 14px;
+      }
+    .btn {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .input {
+      width: 100%;
+      max-width: none;
+      font-size: 16px;
+    }
+  
+    .checkbox-wrapper-28 {
+      --size: 17px;
+    }
+  
+    .checkbox-wrapper-28 label {
+      font-size: 12px;
+    }
+}
+  @media (min-width: 768px) {
+    .table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+      }
+    
+      .table th,
+      .table td {
+        white-space: nowrap;
+      }
+    
+      .table tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+  .fth {
+    width: 40px;
+  }
+
+  .input {
+    width: 150px;
+  }
+
+  .btn {
+    width: 180px;
+  }
+
+  #leftSide {
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  #rightSide {
+    width: 100%;
+  }
+
+  #rightTop {
+    width: 100%;
+  }
+  }  */
+
+
