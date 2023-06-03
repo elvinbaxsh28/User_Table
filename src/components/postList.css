@@ -35,7 +35,7 @@
   background-color: #e6e6e6;
 }
 .checkbox-wrapper-28 label {
-  color: #0080d3;
+  color: #4196E4;
   line-height: var(--size);
   cursor: pointer;
   position: relative;
@@ -46,12 +46,12 @@
   width: var(--size);
   margin-left: 9px;
   float: right;
-  border: 2px solid #0080d3;
+  border: 1.5px solid #4196E4;
   border-radius: 6px;
   transition: 0.15s all ease-out;
 }
 .checkbox-wrapper-28 svg {
-  stroke: #0080d3;
+  stroke: #4196E4;
   stroke-width: 3px;
   height: 0;
   width: calc(var(--size) * 0.6);
@@ -89,6 +89,7 @@
 }
 .table {
   border-collapse: collapse;
+  border-spacing: 0;
 }
 .table th,
 .table td {
@@ -116,7 +117,9 @@
 
 #table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse:  collapse;
+  border-spacing: 0;
+
 }
 
 /* Table Styles */
@@ -127,7 +130,8 @@
   border-bottom: 3px solid #ccc;
   border-left: 3px solid #ccc;
   background-color: #fff;
-  color: #555;
+  color: #606060;
+  
 }
 
 /* Dark Mode Styles */
@@ -153,16 +157,17 @@ th {
   height: 30px;
   width: 85%;
   border: none;
-  font-size: 20px;
+  font-size: 120%;
   color: #fff;
-  padding: 10px;
+  padding: 4%;
+  margin-left: 3%;
 }
 .input::placeholder {
-  color: #c3c3c3;
+  color: #BEBEBE;
 }
 .input-dark {
   background-color: #fff;
-  color: #333;
+  color: #383838;
 }
 
 .btn {
@@ -173,10 +178,12 @@ th {
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  background-color: #0e95ef;
+  background-color: #348FE2;
   color: #fff;
   border: none;
   margin-top: 15px;
+  margin-left: 3%;
+
 }
 
 .btn:hover {
@@ -204,7 +211,7 @@ th {
 }
 
 #leftSide h2 {
-  margin-right: 133px;
+  margin-right: 62%;
 }
 
 #rightSide {
@@ -235,7 +242,7 @@ th {
   width: 100%;
 }
 
-@media (max-width: 790px) {
+/* @media (max-width: 790px) {
   #mainArea {
     flex-direction: column;
   }
@@ -345,4 +352,177 @@ th {
   #tableArea {
     width: 75%;
   }
-}
+} */
+
+
+
+
+@media screen  and (max-width:1400px){
+    #rightTop{
+      width:63%;
+    }
+    table{
+      font-size: 98%;
+     }
+     #leftSide h2 {
+        margin-right: 55%;
+      }
+  }
+  
+  @media screen  and (max-width:1200px){
+    #rightTop{
+      width:70%;
+    }
+    table{
+      font-size:93%;
+     }
+     #leftSide h2 {
+        margin-right: 45%;
+      }
+     .sorguClass{
+        text-align: center;
+        display: flex;
+        align-items: center;
+        font-size: 95%;
+        margin-left: 10%;
+     }
+  }
+  
+  @media screen  and (max-width:1100px){
+    #rightTop{
+      width:77%;
+    }
+    #leftSide h2 {
+        margin-right: 35%;
+      }
+    table{
+      font-size:87%;
+     }
+     .sorguClass{
+        text-align: center;
+        margin-left: 10%;
+
+     }
+    
+  }
+  
+  @media only screen and (max-width: 1000px) {
+  
+    #rightTop{
+      width:80%;
+    }
+    #leftSide h2 {
+        margin-right: 45%;
+      }
+    table{
+      font-size: 85%;
+     }
+  }
+  
+  
+  @media only screen and (max-width:950px) {
+  
+    #rightTop{
+      width:92%;
+  
+    }
+    #leftSide{
+      height: 83.8vh;
+    }
+    #leftSide h2 {
+        margin-right: 45%;
+      }
+   table{
+    font-size: 85%;
+   }
+   .sorguClass{
+    text-align: center;
+    margin-left: 10%;
+
+ }
+  }
+  
+  
+  @media only screen and (max-width:830px) {
+  
+    #rightTop{
+      width:99%;
+    }
+    #leftSide{
+      height: 83.5vh;
+    }
+   table{
+    font-size: 75%;
+   }
+   .btn{
+    padding: 2%;
+   }
+   #leftSide h2 {
+    margin-right: 35%;
+    font-size: 20px;
+  }
+  .sorguClass{
+    text-align: center;
+    margin-left: 20%;
+
+ }
+  }
+  
+  
+  @media only screen and (max-width:790px) {
+    #mainArea{
+      flex-direction: column;
+    }
+    #leftSide{
+      width: 97%;
+      height: 32vh;
+      margin-top: 1.2%;
+    }
+    .input{
+      width: 70%;
+      padding: 3%;
+    }
+  
+    .btn{
+      width: 76%;
+      padding: 2.8%;
+    }
+    #leftSide h2 {
+      margin-right: 65.5%;
+    }
+    
+   #rightSide{
+    width: 96%;
+    margin-left: 2%;
+   }
+   
+ 
+  }
+  
+  @media only screen and (max-width:520px) {
+  
+    #leftSide{
+      width: 97%;
+      height: 30vh;
+      margin-top: 1%;
+    }
+  
+    #leftSide h2 {
+      margin-right: 60%;
+    }
+    #rightTop{
+      width:99%;
+      margin-bottom:1%;
+      font-weight: 200;
+    }
+    
+   #rightSide{
+    width: 99%;
+    margin-left: 1%;
+    padding: .3%;
+   }
+   #checkStyle{
+    padding: .3%;
+  
+  }
+  }

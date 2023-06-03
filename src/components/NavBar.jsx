@@ -40,32 +40,33 @@ const NavBar = () => {
         </h2>
       </div>
 
-      <div className="buttons">
+     
+
+<div className="buttons">
         <label className={`switch ${theme}`}>
           <input type="checkbox" onChange={() => toggleTheme(theme)} />
           <span className="slider round">
             <div
               className="parent"
-              style={{ backgroundColor: theme === "light" ? "#333" : "" }}
+              style={{ backgroundColor: theme === "light" ? "#222" : "" }}
             >
               <p
                 id="iconSun"
                 className={`toggle-icon ${theme === "dark" ? "active" : ""}`}
                 style={{
-                  backgroundColor: theme === "light" ? "#222" : "",
+                  backgroundColor: theme === "light" ? "#000" : "",
                   borderRadius: "6px",
                 }}
               >
                 <p
-                  style={{ color: theme === "light" ? "#444" : "" }}
+                  style={{ color: theme === "light" ? "#333" : "" }}
                   className="iconElement"
                 >
-                  {" "}
                   <FiSun />
                 </p>
                 <p
                   className="toggleText"
-                  style={{ color: theme === "light" ? "#444" : "" }}
+                  style={{ color: theme === "light" ? "#333" : "" }}
                 >
                   Light
                 </p>
@@ -74,10 +75,9 @@ const NavBar = () => {
               <p
                 id="iconMoon"
                 className={`toggle-icon ${theme === "light" ? "active" : ""}`}
-                style={{ backgroundColor: theme === "light" ? "#333" : "" }}
+                style={{ backgroundColor: theme === "light" ? "#222" : "" }}
               >
                 <p className="iconElement">
-                  {" "}
                   <HiOutlineMoon />
                 </p>
                 <p className="toggleText">Dark</p>
