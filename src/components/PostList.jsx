@@ -195,6 +195,8 @@ const PostList = () => {
         )}
 
         <div id="rightTop">
+
+
           <div id="checkBoxes">
             <div id="checkStyle" className={`navbar-${theme}`}>
               <div className="checkbox-wrapper-28">
@@ -409,6 +411,10 @@ const PostList = () => {
               </div>
             </div>
           </div>
+
+
+
+          
         </div>
 
         <div id="tableArea">
