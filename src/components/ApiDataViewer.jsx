@@ -14,7 +14,9 @@ function ApiDataViewer() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`https://jsonplaceholder.typicode.com/${apiName}`);
+      const response = await fetch(
+        `https://jsonplaceholder.typicode.com/${apiName}`
+      );
       const jsonData = await response.json();
       setData(jsonData);
       initializeColumnVisibility(jsonData, true); // Pass true to activate all checkboxes
@@ -200,17 +202,18 @@ function ApiDataViewer() {
                   disabled={currentPage === 1}
                   onClick={() => handlePageChange(currentPage - 1)}
                 />
-                {Array.from({ length: totalPages }, (_, index) => index + 1).map(
-                  (page) => (
-                    <Pagination.Item
-                      key={page}
-                      active={page === currentPage}
-                      onClick={() => handlePageChange(page)}
-                    >
-                      {page}
-                    </Pagination.Item>
-                  )
-                )}
+                {Array.from(
+                  { length: totalPages },
+                  (_, index) => index + 1
+                ).map((page) => (
+                  <Pagination.Item
+                    key={page}
+                    active={page === currentPage}
+                    onClick={() => handlePageChange(page)}
+                  >
+                    {page}
+                  </Pagination.Item>
+                ))}
                 <Pagination.Next
                   disabled={currentPage === totalPages}
                   onClick={() => handlePageChange(currentPage + 1)}
