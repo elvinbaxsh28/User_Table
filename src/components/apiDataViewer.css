@@ -81,17 +81,25 @@
 
 /* Table */
 
-.tableDiv {
+#tableDiv {
   width: 100%;
   position: relative;
   border-radius: 6px;
-  height: 60vh; 
+  max-height: 70vh;
+  overflow: scroll;
 }
 
+#tableDiv::-webkit-scrollbar {
+  width: 0px;
+}
 
 .table {
   border-collapse: collapse;
+  font-size: 105%;
 }
+  
+
+
 .table th,
 .table td {
   border: none;
@@ -124,8 +132,8 @@
 /* Table Styles */
 .table th,
 .table td {
-  width: 1%;
-  padding: .6%;
+  width: 10%;
+  padding: .8%;
   text-align: center;
   border-bottom: 3px solid #ccc;
   border-left: 3px solid #ccc;
@@ -143,7 +151,7 @@
 }
 
 th {
-  font-size: 110%;
+  font-size: 120%;
   text-transform: capitalize;
 }
 
@@ -391,4 +399,18 @@ th {
   #checkStyle {
     padding: 0.2%;
   }
+}
+
+
+
+.pagination-button {
+  padding: .3% .8%;
+  margin: 0.7% .3%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination-button:hover {
+  opacity: 0.9;
 }

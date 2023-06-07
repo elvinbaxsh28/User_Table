@@ -2,16 +2,26 @@ import React, { useState, useContext } from "react";
 import Swal from "sweetalert2";
 import "./apiDataViewer.css";
 import { ThemeContext } from "./ThemeContext";
+import Pagination from "./Pagination";
 
 function ApiDataViewer() {
   const { theme } = useContext(ThemeContext);
   const [apiName, setApiName] = useState("");
   const [data, setData] = useState([]);
   const [columnVisibility, setColumnVisibility] = useState({});
+  const [currentPage, setCurrentPage] = useState(1); // Current page
+  const [itemsPerPage, setItemsPerPage] = useState(10); // Number of items per page
+
+  // Calculate the indexes of the first and last items of the current page
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`https://jsonplaceholder.typicode.com/${apiName}`);
+      const response = await fetch(
+        `https://jsonplaceholder.typicode.com/${apiName}`
+      );
       const jsonData = await response.json();
       setData(jsonData);
       initializeColumnVisibility(jsonData, true); // Pass true to activate all checkboxes
@@ -21,7 +31,7 @@ function ApiDataViewer() {
       setColumnVisibility({});
     }
   };
-  
+
   const initializeColumnVisibility = (jsonData, activateAll) => {
     const columns = Object.keys(jsonData[0] || {});
     const initialVisibility = columns.reduce((acc, column) => {
@@ -30,13 +40,39 @@ function ApiDataViewer() {
     }, {});
     setColumnVisibility(initialVisibility);
   };
-  
 
+  // const renderTableCell = (value) => {
+  //   const maxLength = 20; // Maximum length of displayed value
+  //   if (typeof value === "object" && value !== null) {
+  //     return JSON.stringify(value);
+  //   } else if (typeof value === "string" && value.length > maxLength) {
+  //     return value.substring(0, maxLength) + "...";
+  //   }
+  //   return value;
+  // };
   const renderTableCell = (value) => {
+    const maxLength = 16; // Maximum length of displayed value
+
     if (typeof value === "object" && value !== null) {
-      return JSON.stringify(value);
+      // If the value is an object, convert it to a JSON string
+      const jsonString = JSON.stringify(value);
+      if (jsonString.length > maxLength) {
+        // Truncate the JSON string if it exceeds the maximum length
+        return jsonString.substring(0, maxLength) + "...";
+      }
+      return jsonString;
+    } else if (typeof value === "string" && value.length > maxLength) {
+      // Truncate string values if they exceed the maximum length
+      return value.substring(0, maxLength) + "...";
     }
+
     return value;
+  };
+
+  const handleItemsPerPageChange = (e) => {
+    const newItemsPerPage = parseInt(e.target.value, 10);
+    setItemsPerPage(newItemsPerPage);
+    setCurrentPage(1); // Reset to the first page
   };
 
   return (
@@ -61,7 +97,8 @@ function ApiDataViewer() {
                     id="selectAllColumns"
                     type="checkbox"
                     className="promoted-input-checkbox"
-                    checked={Object.values(columnVisibility).every(
+                    checked={Object.values(columnVisibility).filter(
+                      //every//some
                       (value) => value
                     )}
                     onChange={() => {
@@ -155,7 +192,7 @@ function ApiDataViewer() {
           </div>
         )}
 
-        <div id="tableDiv">
+        <div id="tableDiv" >
           {data.length > 0 && (
             <table
               id="table"
@@ -170,8 +207,9 @@ function ApiDataViewer() {
                     ))}
                 </tr>
               </thead>
+
               <tbody>
-                {data.map((item, index) => (
+                {currentItems.map((item, index) => (
                   <tr key={index}>
                     {Object.entries(item)
                       .filter(([column]) => columnVisibility[column])
@@ -183,12 +221,42 @@ function ApiDataViewer() {
               </tbody>
             </table>
           )}
+   
         </div>
+
+     <div>
+             
+     {data.length === 0 && (
+            <div id="noDataMessage">
+              No data available. Please fetch data from an API.
+            </div>
+          )}
+
+          {data.length > 0 && (
+            <div>
+              <Pagination
+                itemsPerPage={itemsPerPage}
+                totalItems={data.length}
+                currentPage={currentPage}
+                onPageChange={setCurrentPage}
+              />
+              <select
+                id="itemsPerPage"
+                value={itemsPerPage}
+                onChange={handleItemsPerPageChange}
+              >
+                <option value={10}>10</option>
+                <option value={25}>25</option>
+                <option value={50}>50</option>
+                <option value={100}>100</option>
+              </select>
+            </div>
+          )}
+     </div>
+
       </div>
     </div>
   );
 }
 
 export default ApiDataViewer;
-
-
