@@ -20,23 +20,15 @@ body {
 }
 
 .navbar-light {
-  background-color: #1F1F1F;
+  background-color: #383838;
   color: #fff;
 }
 
 
-/* .navbar-light .toggle-button {
-  color: #0d99ff;
-}
-
-.navbar-dark .toggle-button {
-  color: #fff;
-} */
 
 
 .active {
   background-color: #0d99ff;
-
 }
 
 .toggle-icon {
@@ -70,7 +62,7 @@ body {
 }
 
 #NavBar {
-  height: 60px;
+  height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -78,9 +70,9 @@ body {
 }
 
 .titleMain {
-  margin-top: 22px;
-  font-size: 160%;
-  margin-left: 10px;
+  margin-top: 20px;
+  font-size: 190%;
+  font-weight: 900;
 }
 
 .check {
@@ -136,12 +128,13 @@ input:checked + .slider:before {
 
 .toggle-icon {
   color: #2196f3;
+  margin-top: 21px;
   font-size: 130%;
 }
 .toggle-icon.active {
   color: #fff;
   width: 100%;
-  border-radius: 6px;
+  border-radius: 9px;
 }
 .slider.round {
   border-radius: 6px;
@@ -187,6 +180,3 @@ input:checked + .slider:before {
     margin-top: 13px;
   }
 
-
-
-  

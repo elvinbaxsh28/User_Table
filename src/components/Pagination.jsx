@@ -8,80 +8,66 @@ const Pagination = ({
   currentPage,
   onPageChange
 }) => {
-  const pageNumbers = [];
-
-  // Calculate the total number of pages
   const totalPages = Math.ceil(totalItems / itemsPerPage);
-
-  // Generate an array of page numbers
-  for (let i = 1; i <= totalPages; i++) {
-    pageNumbers.push(i);
-  }
 
   // Handle page number click
   const handlePageClick = (pageNumber) => {
     onPageChange(pageNumber);
   };
 
+  const getButtonRange = () => {
+    const range = [];
+
+    // Calculate the minimum button number to display
+    let minButton = currentPage - 2;
+    if (minButton <= 0) {
+      minButton = 1;
+    }
+
+    // Calculate the maximum button number to display
+    let maxButton = minButton + 4;
+    if (maxButton > totalPages) {
+      maxButton = totalPages;
+      minButton = maxButton - 4;
+      if (minButton <= 0) {
+        minButton = 1;
+      }
+    }
+
+    for (let i = minButton; i <= maxButton; i++) {
+      range.push(i);
+    }
+
+    return range;
+  };
+
   return (
     <div className="pagination">
-      {currentPage > 1 && (
+      {currentPage > 3 && (
         <button
-          onClick={() => handlePageClick(currentPage - 1)}
-          className={`pagination-button ${currentPage === 1 ? "disabled" : ""}`}
-          disabled={currentPage === 1}
+          onClick={() => handlePageClick(1)}
+          className="pagination-button"
         >
-          Previous
+          First
         </button>
       )}
-      {pageNumbers.map((number) => {
-        if (currentPage > 5 && number === totalPages - 0) {
-          return (
-            <button
-              key={number}
-              onClick={() => handlePageClick(number)}
-              className={`pagination-button ${currentPage === number ? "active" : ""}`}
-            >
-              {number}
-            </button>
-          );
-        }
-        if (number === totalPages) {
-          return (
-            <button
-              key={number}
-              onClick={() => handlePageClick(number)}
-              className={`pagination-button ${currentPage === number ? "active" : ""}`}
-            >
-              {number}
-            </button>
-          );
-        }
-        if (number <= 5) {
-          return (
-            <button
-              key={number}
-              onClick={() => handlePageClick(number)}
-              className={`pagination-button ${currentPage === number ? "active" : ""}`}
-            >
-              {number}
-            </button>
-          );
-        }
-        if (number === 6 && totalPages > 6) {
-          return (
-            <span key="ellipsis">...</span>
-          );
-        }
-        return null; // Skip page numbers greater than 6
-      })}
+
+      {getButtonRange().map((number) => (
+        <button
+          key={number}
+          onClick={() => handlePageClick(number)}
+          className={`pagination-button ${currentPage === number ? "active" : ""}`}
+        >
+          {number}
+        </button>
+      ))}
+
       {currentPage < totalPages && (
         <button
-          onClick={() => handlePageClick(currentPage + 1)}
-          className={`pagination-button ${currentPage === totalPages ? "disabled" : ""}`}
-          disabled={currentPage === totalPages}
+          onClick={() => handlePageClick(totalPages)}
+          className="pagination-button"
         >
-          Next
+          Last
         </button>
       )}
     </div>

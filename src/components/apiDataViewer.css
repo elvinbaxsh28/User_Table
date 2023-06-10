@@ -85,7 +85,7 @@
   width: 100%;
   position: relative;
   border-radius: 6px;
-  max-height: 70vh;
+  max-height:71vh;
   overflow: scroll;
 }
 
@@ -93,85 +93,95 @@
   width: 0px;
 }
 
-.table {
+#table{
+  width: 100%;
   border-collapse: collapse;
-  font-size: 105%;
+  font-size: 95%;
 }
-  
 
-
-.table th,
-.table td {
+#table th,
+#table td {
   border: none;
 }
 
-.table th:first-child,
-.table td:first-child {
+#table th:first-child,
+#table td:first-child {
   border-left: none;
 }
 
-.table td:last-child {
+#table td:last-child {
   border-right: none;
 }
 
-.table tr:first-child th,
-.table tr:first-child td {
+#table tr:first-child th,
+#table tr:first-child td {
   border-top: none;
 }
 
-.table tr:last-child,
-.table tr:last-child td {
+#table tr:last-child,
+#table tr:last-child td {
   border-bottom: none;
 }
 
-#table {
-  width: 100%;
-  border-collapse: collapse;
-}
+
 
 /* Table Styles */
-.table th,
-.table td {
-  width: 10%;
-  padding: .8%;
+#table th,
+#table td {
+  width: 2%;
+  padding: .9%;
   text-align: center;
-  border-bottom: 3px solid #ccc;
-  border-left: 3px solid #ccc;
-  background-color: #fff;
-  color: #555;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
 }
 
 /* Dark Mode Styles */
-.table-dark th,
-.table-dark td {
-  background-color: #222;
-  color: #fff;
-  border-bottom: 3px solid #555;
-  border-left: 3px solid #555;
+#table-dark th,
+#table-dark td {
+  border-bottom: 1px solid #555;
+  border-left: 1px solid #555;
 }
 
+.tabel-light{
+  background-color: #fff;
+  color: #333;
+}
+.tabel-dark{
+  background-color: #333;
+  color: #fff;
+}
 th {
   font-size: 120%;
   text-transform: capitalize;
 }
 
+.exampleTitle{
+  text-transform: capitalize;
+  color: #bebebe;
+  margin: .2% 0%;
+}
+
 /* input */
-.input {
-  background-color: #333;
+
+#inputStyle{
   border-radius: 6px;
   padding: 4%;
   width: 75%;
   border: none;
   font-size: 120%;
+}
+.input-light {
+  background-color: #333;
   color: #fff;
+}
+.input-dark {
+  background-color: #f0f0f0;
+  color: #bebebe;
 }
 .input::placeholder {
   color: #bebebe;
 }
-.input-dark {
-  background-color: #fff;
-  color: #333;
-}
+
 
 .btn {
   display: flex;
@@ -203,9 +213,9 @@ th {
 
 #leftSide {
   width: 12%;
-  height: 75vh;
+  height: 79.5vh;
   margin-right: 1%;
-  margin-top: 1%;
+  margin-top: .6%;
   text-align: center;
   border-radius: 5px;
 }
@@ -225,9 +235,16 @@ th {
 }
 
 #rightTop {
-  width: 75%;
-  margin: 1% 0% 1% 0%;
+  width: 50%;
+  margin: .3% 0% 1% 0%;
   font-weight: 300;
+}
+
+.rightBottom{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 #checkBoxes {
   display: flex;
@@ -240,33 +257,24 @@ th {
   border-radius: 5px;
 }
 
-.pagBtn {
-  padding: .3% .8%;
-  margin: 0.7% 0%;
+.pagination-button {
+  padding: 5px 10px;
+  margin: 2px; 
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.pagBtn:hover {
+.pagination-button:hover {
   opacity: 0.9;
 }
 
-.currentPage {
-  margin: 0% 0.5%;
+#itemsPerPage{
+  padding: 8px 12px;
+  border-radius: 5px;
 }
 
-.pageButton{
-  padding: .3% .7%;
-  border-radius: 20%;
-  border: none;
-  margin: 0% .2%;
-  cursor: pointer;
-}
 
-.pageButton:hover{
-  opacity: .9;
-}
 
 @media screen and (max-width: 1400px) {
   #rightTop {
@@ -315,7 +323,7 @@ th {
     width: 99%;
   }
   #leftSide {
-    height: 83.8vh;
+    height: 84vh;
   }
 
   table {
@@ -334,7 +342,7 @@ th {
     margin-left: 6%;
   }
   table {
-    font-size: 75%;
+    font-size: 70%;
   }
   .btn {
     padding: 2%;
@@ -344,23 +352,21 @@ th {
   }
 }
 
-@media only screen and (max-width: 790px) {
+@media only screen and (max-width:800px) {
   #mainArea {
     flex-direction: column;
   }
   #leftSide {
-    width: 97%;
+    width: 98%;
     height: 32vh;
     margin-top: 1.2%;
-  }
-  .input {
-    width: 70%;
-    padding: 3%;
+    margin-left: 1%;
   }
 
+
   .btn {
-    width: 76%;
-    padding: 2.8%;
+    width: 73.5%;
+    padding: 2%;
   }
   #leftSide h2 {
     margin-right: 69%;
@@ -368,11 +374,26 @@ th {
 
   #rightSide {
     width: 99%;
-    margin-left: 2%;
+    margin-left: .5%;
   }
   #rightTop {
     width: 98%;
   }
+  #table{
+    font-size:60%;
+  }
+  #inputStyle{
+    padding: 2%;
+    width: 70%;
+  }
+  #tableDiv {
+    max-height:40vh;
+  }
+  #table th,
+  #table td {
+  width: 3%;
+  padding: 1.4%;
+}
 }
 
 @media only screen and (max-width: 520px) {
@@ -397,20 +418,25 @@ th {
     padding: 0.3%;
   }
   #checkStyle {
-    padding: 0.2%;
+    padding: 0.1%;
   }
+  #table{
+    font-size: 58%;
+  }
+  #inputStyle{
+    padding: 3.1%;
+    width: 70%;
+  }
+  #tableDiv {
+    max-height:42vh;
+  }
+  #table th,
+  #table td {
+  width: 3%;
+  padding: 1.4%;
 }
-
-
-
-.pagination-button {
-  padding: .3% .8%;
-  margin: 0.7% .3%;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.btn {
+  width: 76%;
+  padding: 2.5%;
 }
-
-.pagination-button:hover {
-  opacity: 0.9;
 }
